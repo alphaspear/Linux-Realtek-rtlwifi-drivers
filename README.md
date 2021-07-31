@@ -32,7 +32,7 @@ OR use dkms to build and manage the modules:<br/>
   <br/>
 IF YOU HAVE SIGNAL STRENGTH ISSUES
   <br/>
-$ sudo /bin/sh -c 'echo "options rtl8723de ant_sel=2" >> /etc/modprobe.d/rtl8723de.conf'
+$ sudo /bin/sh -c 'echo "options rtl8723de ant_sel=2" >> /etc/modprobe.d/rtl8723de.conf'<br/>
 OR<br/>
 go to the directory with name of your card and edit sw.c
 <br/>
