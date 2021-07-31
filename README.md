@@ -14,17 +14,20 @@ cd Downloads
 $ git clone https://github.com/alphaspear/Linux-Realtek-rtlwifi-drivers.git<br/>
 unofficial<br/>
 $ cd Linux-Realtek-rtlwifi-drivers<br/>
-
-Now, either you can run:
-$ /Downloads/Linux-Realtek-rtlwifi-drivers$ make 
-$ /Downloads/Linux-Realtek-rtlwifi-drivers$ sudo make install
+<br/>
+Now, either you can run:<br/>
+$ /Downloads/Linux-Realtek-rtlwifi-drivers
+$ make 
+$ /Downloads/Linux-Realtek-rtlwifi-drivers
+$ sudo make install
 
 OR use dkms to build and manage the modules:
 
-$ /Downloads/Linux-Realtek-rtlwifi-drivers$ sudo dkms add ../rtlwifi_new
-$ /Downloads/Linux-Realtek-rtlwifi-drivers$ sudo dkms build rtlwifi-new/0.6 
-$ /Downloads/Linux-Realtek-rtlwifi-drivers$ sudo dkms install rtlwifi-new/0.6
-$ /Downloads/Linux-Realtek-rtlwifi-drivers$ sudo modprobe -v rtl8723de ant_sel=2
+$ /Downloads/Linux-Realtek-rtlwifi-drivers
+$ sudo dkms add ../rtlwifi_new
+$ sudo dkms build rtlwifi-new/0.6 
+$ sudo dkms install rtlwifi-new/0.6
+$ sudo modprobe -v rtl8723de ant_sel=2
  
   
 IF YOU HAVE SIGNAL STRENGTH ISSUES
