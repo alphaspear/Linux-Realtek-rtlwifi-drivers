@@ -16,13 +16,13 @@ unofficial<br/>
 $ cd Linux-Realtek-rtlwifi-drivers<br/>
 <br/>
 Now, either you can run:<br/>
-$ /Downloads/Linux-Realtek-rtlwifi-drivers
-$ make 
-$ /Downloads/Linux-Realtek-rtlwifi-drivers
-$ sudo make install
-
-OR use dkms to build and manage the modules:
-
+$ /Downloads/Linux-Realtek-rtlwifi-drivers<br/>
+$ make <br/>
+$ /Downloads/Linux-Realtek-rtlwifi-drivers<br/>
+$ sudo make install<br/>
+<br/>
+OR use dkms to build and manage the modules:<br/>
+<br/>
 $ /Downloads/Linux-Realtek-rtlwifi-drivers
 $ sudo dkms add ../rtlwifi_new
 $ sudo dkms build rtlwifi-new/0.6 
