@@ -11,9 +11,9 @@ $ sudo apt update && sudo apt install git dkms
 
 cd Downloads
 
-$ git clone https://github.com/alphaspear/Linux-Realtek-rtlwifi-drivers.git
-unofficial
-$ cd Linux-Realtek-rtlwifi-drivers
+$ git clone https://github.com/alphaspear/Linux-Realtek-rtlwifi-drivers.git<br/>
+unofficial<br/>
+$ cd Linux-Realtek-rtlwifi-drivers<br/>
 
 Now, either you can run:
 $ /Downloads/Linux-Realtek-rtlwifi-drivers$ make 
