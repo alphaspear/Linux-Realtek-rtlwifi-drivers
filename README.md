@@ -70,39 +70,36 @@ The signals are now a lot stronger, you are done. If not, repeat command set 2 w
 If that does not help, I have no idea what is wrong.
 
 ***********************************************************************************************
-
-### Section for RTL8822BE and RTL8822CE
-
-The drivers for these devices are found in the rtw88 branch. To get the codes, you need to do the following:
-
+ TO INSTALL:
+  
 :~$ sudo apt update && sudo apt install git dkms
+
 cd Downloads
 
-:~$ git clone -b extended --single-branch https://github.com/lwfinger/rtlwifi_new.git
+:~$ git clone https://github.com/alphaspear/Linux-Realtek-rtlwifi-drivers.git
 unofficial
-:~$ cd rtlwifi_new
+:~$ cd Linux-Realtek-rtlwifi-drivers
 
 Now, either you can run:
-:~/Downloads/rtlwifi_new$ make 
-:~/Downloads/rtlwifi_new$ sudo make install
+:~/Downloads/Linux-Realtek-rtlwifi-drivers$ make 
+:~/Downloads/Linux-Realtek-rtlwifi-drivers$ sudo make install
 
 OR use dkms to build and manage the modules:
 
-:~/Downloads/rtlwifi_new$ sudo dkms add ../rtlwifi_new
-:~/Downloads/rtlwifi_new$ sudo dkms build rtlwifi-new/0.6 
-:~/Downloads/rtlwifi_new$ sudo dkms install rtlwifi-new/0.6
-:~/Downloads/rtl-new/rtlwifi_new$ sudo modprobe -v rtl8723de ant_sel=2
-git clone https://github.com/alphaspear/Linux-Realtek-rtlwifi-drivers.git
-cd Linux-Realtek-rtlwifi-drivers
-make
-sudo make install
+:~/Downloads/Linux-Realtek-rtlwifi-drivers$ sudo dkms add ../rtlwifi_new
+:~/Downloads/Linux-Realtek-rtlwifi-drivers$ sudo dkms build rtlwifi-new/0.6 
+:~/Downloads/Linux-Realtek-rtlwifi-drivers$ sudo dkms install rtlwifi-new/0.6
+:~/Downloads/Linux-Realtek-rtlwifi-drivers$ sudo modprobe -v rtl8723de ant_sel=2
+ 
+  
+IF YOU HAVE SIGNAL STRENGTH ISSUES
+  
+sudo /bin/sh -c 'echo "options rtl8723de ant_sel=2" >> /etc/modprobe.d/rtl8723de.conf'
+OR
+go to the directory with name of your card and edit sw.c
 
-When your kernel changes, then you need to do the following:
-cd ~/Linux-Realtek-rtlwifi-drivers
-git pull
-make
-sudo make install
-
+In sw.c change .ant_sel = 0 to .ant_sel = 2
+  
 Remember, this MUST be done whenever you get a new kernel - no exceptions.
 
 These drivers will not build for kernels older than 4.14. If you are using a kernel newer than 5.2,
