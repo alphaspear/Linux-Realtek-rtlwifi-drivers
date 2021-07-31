@@ -23,22 +23,22 @@ $ sudo make install<br/>
 <br/>
 OR use dkms to build and manage the modules:<br/>
 <br/>
-$ /Downloads/Linux-Realtek-rtlwifi-drivers
-$ sudo dkms add ../rtlwifi_new
-$ sudo dkms build rtlwifi-new/0.6 
-$ sudo dkms install rtlwifi-new/0.6
-$ sudo modprobe -v rtl8723de ant_sel=2
+<br/>$ /Downloads/Linux-Realtek-rtlwifi-drivers
+<br/>$ sudo dkms add ../rtlwifi_new
+<br/>$ sudo dkms build rtlwifi-new/0.6 
+<br/>$ sudo dkms install rtlwifi-new/0.6
+<br/>$ sudo modprobe -v rtl8723de ant_sel=2
  
-  
+  <br/>
 IF YOU HAVE SIGNAL STRENGTH ISSUES
-  
+  <br/>
 $ sudo /bin/sh -c 'echo "options rtl8723de ant_sel=2" >> /etc/modprobe.d/rtl8723de.conf'
-OR
+OR<br/>
 go to the directory with name of your card and edit sw.c
-
+<br/>
 In sw.c change .ant_sel = 0 to .ant_sel = 2
-  
-Remember, this MUST be done whenever you get a new kernel - no exceptions.
-
+  <br/><br/>
+Remember, this MUST be done whenever you get a new kernel - no exceptions.<br/>
+<br/><br/>
 These drivers will not build for kernels older than 4.14. If you are using a kernel newer than 5.2,
 I suggest that you use the driver built into the kernel!
