@@ -75,13 +75,30 @@ If that does not help, I have no idea what is wrong.
 
 The drivers for these devices are found in the rtw88 branch. To get the codes, you need to do the following:
 
-git clone http://github.com/lwfinger/rtlwifi_new.git -b rtw88
-cd rtlwifi_new
+:~$ sudo apt update && sudo apt install git dkms
+cd Downloads
+
+:~$ git clone -b extended --single-branch https://github.com/lwfinger/rtlwifi_new.git
+unofficial
+:~$ cd rtlwifi_new
+
+Now, either you can run:
+:~/Downloads/rtlwifi_new$ make 
+:~/Downloads/rtlwifi_new$ sudo make install
+
+OR use dkms to build and manage the modules:
+
+:~/Downloads/rtlwifi_new$ sudo dkms add ../rtlwifi_new
+:~/Downloads/rtlwifi_new$ sudo dkms build rtlwifi-new/0.6 
+:~/Downloads/rtlwifi_new$ sudo dkms install rtlwifi-new/0.6
+:~/Downloads/rtl-new/rtlwifi_new$ sudo modprobe -v rtl8723de ant_sel=2
+git clone https://github.com/alphaspear/Linux-Realtek-rtlwifi-drivers.git
+cd Linux-Realtek-rtlwifi-drivers
 make
 sudo make install
 
 When your kernel changes, then you need to do the following:
-cd ~/rtlwifi_new
+cd ~/Linux-Realtek-rtlwifi-drivers
 git pull
 make
 sudo make install
